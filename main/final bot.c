@@ -26,8 +26,8 @@ while (1==1)
 
 	else if (vexRT[Btn6D] == 1)
 	{
-		motor[lift1] = 127;
-		motor[lift2] = 127;
+		motor[lift1] = -127;
+		motor[lift2] = -127;
 	}
 
 	else
