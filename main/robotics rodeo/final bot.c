@@ -61,7 +61,7 @@ task main()
 			motor[liftextend] = 0;
 		}
 		
-				/* assign right buttons to claw	*/
+		/* assign right buttons to claw	*/
 
 		if(vexRT[Btn8U] == 1)
 		{
