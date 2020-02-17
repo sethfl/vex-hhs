@@ -1,5 +1,6 @@
 #pragma config(Motor,  port2,           lift1,         tmotorVex393_MC29, openLoop)
-#pragma config(Motor,  port3,           claw,          tmotorVex393_MC29, openLoop)
+#pragma config(Motor,  port3,           liftextend,    tmotorVex393_MC29, openLoop)
+#pragma config(Motor,  port4,           claw,          tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port5,           frontleft,     tmotorServoContinuousRotation, openLoop, reversed)
 #pragma config(Motor,  port6,           backleft,      tmotorServoContinuousRotation, openLoop, reversed)
 #pragma config(Motor,  port7,           backright,     tmotorServoContinuousRotation, openLoop)
@@ -10,56 +11,73 @@
 task main()
 {
 
-while (1==1)
-{
-
-
-/* assign movement to tires */
-
-	motor[backright] = vexRT[1];
-	motor[frontright] = vexRT[1];
-	motor[backleft] = vexRT[2];
-	motor[frontleft] = vexRT[2];
-
-	
-/* assign right bumper to lift mechanism */
-
-	if(vexRT[Btn6U] == 1)
+	while (1==1)
 	{
-		motor[lift1] = 127;
-		motor[lift2] = 127;
-	}
 
-	else if (vexRT[Btn6D] == 1)
-	{
-		motor[lift1] = -127;
-		motor[lift2] = -127;
-	}
 
-	else
-	{
-		motor[lift1] = 0;
-		motor[lift2] = 0;
-	}
-	
-	
-/* assign left bumper to claw	*/
+		/* assign movement to tires */
 
-	if(vexRT[Btn5U] == 1)
-	{
-		motor[claw] = 127;
-	}
-	
-	else if (vexRT[Btn5D] == 1)
-	{
-		motor[claw] = -127;
-	}
-	
-	else
-	{
-		motor[claw] = 0;
-	}
+		motor[backright] = vexRT[1];
+		motor[frontright] = vexRT[1];
+		motor[backleft] = vexRT[2];
+		motor[frontleft] = vexRT[2];
 
-}
+
+		/* assign right bumper to lift mechanism */
+
+		if(vexRT[Btn6U] == 1)
+		{
+			motor[lift1] = 127;
+			motor[lift2] = 127;
+		}
+
+		else if (vexRT[Btn6D] == 1)
+		{
+			motor[lift1] = -127;
+			motor[lift2] = -127;
+		}
+
+		else
+		{
+			motor[lift1] = 0;
+			motor[lift2] = 0;
+		}
+
+
+		/* assign left bumper to lift extender	*/
+
+		if(vexRT[Btn5U] == 1)
+		{
+			motor[liftextend] = 127;
+		}
+
+		else if (vexRT[Btn5D] == 1)
+		{
+			motor[liftextend] = -127;
+		}
+
+		else
+		{
+			motor[liftextend] = 0;
+		}
+		
+				/* assign right buttons to claw	*/
+
+		if(vexRT[Btn8U] == 1)
+		{
+			motor[claw] = 127;
+		}
+
+		else if (vexRT[Btn8D] == 1)
+		{
+			motor[claw] = -127;
+		}
+
+		else
+		{
+			motor[claw] = 0;
+		}
+
+	}
 
 }
