@@ -66,5 +66,3 @@ task main()
 
 
 /* this code has super cow powers! */
-
-/* thanks to douglas for letting me make this monstrosity */
